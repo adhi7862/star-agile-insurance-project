@@ -30,7 +30,7 @@ node {
             echo "Image push complete"
         }
     }
-    stage('Configure and Deploy to the test-server'){
-        ansiblePlaybook become: true, credentialsId: 'ansible-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml'
+    stage("ansible") {
+        ansiblePlaybook credentialsId: 'ubuntu', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'ansible-playbook.yml'
     }
 }
