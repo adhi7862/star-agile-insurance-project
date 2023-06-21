@@ -34,6 +34,6 @@ node {
         ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'ansible.init', playbook: 'ansible-playbook.yml'
     }
     stage('execute test-server') {
-        sh 'java -jar Desktop.jar'
+        sh 'java -jar Documents.jar'
     }
 }
